@@ -7,7 +7,8 @@ echo " INSTALL WEB SOSMED"
 echo "============================="
 echo
 
-
+sudo apt-get install apache2 php php-mysql
+sudo apt-get install mysql-server
 
 echo "=============================>"
 echo "Downloading Data"
