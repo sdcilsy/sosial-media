@@ -7,7 +7,7 @@ echo " INSTALL WEB SOSMED"
 echo "============================="
 echo
 
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install apache2 php php-mysql
 sudo apt-get -y install mysql-server
 
