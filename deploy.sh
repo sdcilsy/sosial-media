@@ -7,8 +7,9 @@ echo " INSTALL WEB SOSMED"
 echo "============================="
 echo
 
-sudo apt-get install apache2 php php-mysql
-sudo apt-get install mysql-server
+sudo apt-get update
+sudo apt-get -y install apache2 php php-mysql
+sudo apt-get -y install mysql-server
 
 echo "=============================>"
 echo "Downloading Data"
@@ -35,13 +36,13 @@ echo "=============================>"
 echo "Config Database"
 echo "=============================>"
 
-sudo mysql -u root -e "create database db1";
+sudo mysql -u root -e "create database dbsosmed";
 
-sudo mysql -u root db1 < /var/www/html/dump.sql;
+sudo mysql -u root dbsosmed < /var/www/html/dump.sql;
 
-sudo mysql -u root -e "create user 'devops'@'localhost' identified by '1234567890'";
+sudo mysql -u root -e "create user 'devopscilsy'@'localhost' identified by '1234567890'";
 
-sudo mysql -u root -e "grant all privileges on *.* to 'devops'@'localhost'";
+sudo mysql -u root -e "grant all privileges on *.* to 'devopscilsy'@'localhost'";
 
 echo "=============================>"
 echo "DONE"
