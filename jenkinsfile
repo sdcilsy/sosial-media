@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps{
                 script {
-                        sh "kubectl set image deployment/landing-page landing-page=wahiddin/landingpage:${BUILD_NUMBER}"
+                        sh "kubectl set image deployment/sosial-media sosial-media=wahiddin/sosmed:${BUILD_NUMBER}"
                 }
             }
         }
