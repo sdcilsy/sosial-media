@@ -25,7 +25,7 @@
                     <h3><?php echo  $_SESSION["user"]["name"] ?></h3>
                     <p><?php echo $_SESSION["user"]["email"] ?></p>
 
-                    <p><a href="logout.php">Logout</a></p>
+                    <p><a href="logout.php">Keluar</a></p>
                 </div>
             </div>
 
@@ -37,14 +37,15 @@
 
             <form action="" method="post" />
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="Apa yang kamu pikirkan?"></textarea>
+                    <textarea class="form-control" placeholder="Kamu mikirin Apa?"></textarea>
                 </div>
             </form>
 
-            <?php for($i=0; $i < 6; $i++){ ?>
+            <?php for($i=0; $i < 3; $i++){ ?>
             <div class="card mb-3">
                 <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis veritatis nemo ad recusandae labore nihil iure qui eum consequatur, officiis facere quis sunt tempora impedit ullam reprehenderit facilis ex amet!
+                Hello world my name is <p><?php echo $_SESSION["user"]["email"] ?></p>
+
                 </div>
             </div>
             <?php } ?>
