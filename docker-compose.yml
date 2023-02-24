@@ -1,0 +1,30 @@
+version: "3.9" #Docker Compose Version
+services: #start a service that we will running
+  sosialmedia: #main container name 
+    ports: #input port sosialmedia
+      -  8585:80 #different port access for multiple ports 
+    image:  "4b1" #image id based from local image dockerfile
+    environment: #setting environment here for security if production env.
+        DB_HOST:  "mysqlcilsy" #pointing host to Mysql service below
+        DB_USER:  "brybry123"
+        DB_PASS:  "jumat12345"
+        DB_NAME:  "dbsql"
+    depends_on:  
+      -  mysqlcilsy
+#dependancy with service below as first running service, if failed then service isnt running as well
+
+
+  mysqlcilsy: #container name for Mysql
+    ports:  #input port for mysqlcilsy
+      -  3310:3306 #different port access for multiple ports 
+    image:  "mysql:5.5.61" #direct pull mysql image from docker hub website
+    environment:
+        MYSQL_HOST: "sosialmedia" #pointing host to Main Service above
+        MYSQL_USER:  "brybry123"
+        MYSQL_ROOT_PASSWORD:  "jumat12345"
+        MYSQL_PASSWORD:  "jumat12345"
+        MYSQL_DATABASE:  "dbsql" 
+
+    volumes:
+        -  ./dump.sql:/docker-entrypoint-initdb.d/dump.sql 
+      #fresh instance started with copy dump.sql to entrypoint initdb
