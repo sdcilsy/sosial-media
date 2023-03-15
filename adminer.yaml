@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment #kind of manifest (Deployment)
 metadata:
   creationTimestamp: null
   labels:
@@ -18,7 +18,7 @@ spec:
         app: adminer
     spec:
       containers:
-      - image: adminer
+      - image: adminer #modify database in localhost
         name: adminer
         ports:
           - containerPort: 8080
