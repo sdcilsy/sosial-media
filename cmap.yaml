@@ -1,11 +1,11 @@
 apiVersion: v1
-kind: ConfigMap
+kind: ConfigMap #Kind of Manifest
 metadata:
-  name: cmap
+  name: cmap #filename
   labels:
     app: sosmed
 data:
-  DB_HOST: dbpaus.cyvxmusxt9s8.ap-southeast-2.rds.amazonaws.com #config file environment
-  DB_USER: admin
-  DB_PASS: Cilsy2023
-  DB_NAME: dbpaus
+  DB_HOST: dbpaus.cyvxmusxt9s8.ap-southeast-2.rds.amazonaws.com #endpoint RDS's database
+  DB_USER: admin #username value we enter when create database 
+  DB_PASS: Cilsy2023 #password value we enter when create database 
+  DB_NAME: dbpaus #name of database
