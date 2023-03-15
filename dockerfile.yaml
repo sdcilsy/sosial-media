@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sosmed
+  name: sosmed
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sosmed
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sosmed
+    spec:
+      containers:
+      - image: ikanpaus/sosmed:v3
+        name: sosmed
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sosmed
+  name: sosmed
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: sosmed
+  type: LoadBalancer
+status:
+  loadBalancer: {}
