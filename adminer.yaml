@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment #kind of manifest (Deployment)
+kind: Deployment #kind of Manifest (Deployment)
 metadata:
   creationTimestamp: null
   labels:
