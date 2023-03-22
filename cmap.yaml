@@ -1,8 +1,8 @@
 apiVersion: v1
-kind: ConfigMap
+kind: ConfigMap #kind of Manifest (ConfigMap)
 metadata:
   creationTimestamp: null
-  name: cmap
+  name: cmap #name of configmap manifest
 data:
-  DB_HOST: whales.cyvxmusxt9s8.ap-southeast-2.rds.amazonaws.com
-  DB_NAME: mysqlwhales
+  DB_HOST: whales.cyvxmusxt9s8.ap-southeast-2.rds.amazonaws.com #RDS Endpoint
+  DB_NAME: mysqlwhales #name of Mysql Database
