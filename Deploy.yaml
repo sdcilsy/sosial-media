@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment #kind of Manifest (Deployment)
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sosmed 
+  name: sosmed #name of Deployment
+spec:
+  replicas: 3 #number of pods
+  selector:
+    matchLabels:
+      app: sosmed 
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sosmed 
+    spec:
+      containers:
+      - image: ikanpaus/sosmed:v3 #my latest image of sosial media in DockerHub
+        name: sosmed #name of Deployment
+        ports:
+        - containerPort: 80 #original port
+        env: #Define the environment variable
+          - name: DB_HOST #environment value for defining hostname, RDS Endpoint
+            valueFrom:
+              configMapKeyRef: #kind of value you want to assign (ConfigMap)
+                name: cmap #name of configmap manifest
+                key: DB_HOST
+          - name: DB_USER #environment value for defining username of database (RDS)
+            valueFrom:
+              secretKeyRef: #kind of value you want to assign (Secret)
+                name: sikrit #name of secret manifest
+                key: DB_USER
+          - name: DB_PASS #environment value for defining password of database (RDS)
+            valueFrom:
+              secretKeyRef: 
+                name: sikrit
+                key: DB_PASS
+          - name: DB_NAME #environment value for defining name of Mysql database
+            valueFrom:
+              configMapKeyRef: 
+                name: cmap 
+                key: DB_NAME
+        resources: {}
+status: {}
+
