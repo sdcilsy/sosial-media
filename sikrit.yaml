@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Secret #kind of Manifest (Secret)
-metadata:
-  creationTimestamp: null
-  name: sikrit #name of manifest deployment (sikrit)
-data:
-  DB_USER: YWRtaW4= #original value encripted with base64
-  DB_PASS: Q2lsc3kyMDIz #original value encripted with base64

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service #kind of Manifest (Service)
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sosmed
+  name: serpis #name of manifest deployment (serpis)
+spec:
+  ports:
+  - port: 80 #original port
+    protocol: TCP
+    targetPort: 80 #pointing to original port
+  selector:
+    app: sosmed #name of Deployment
+  type: LoadBalancer #show elb link access to website
+status:
+  loadBalancer: {}
