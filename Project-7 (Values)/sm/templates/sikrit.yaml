@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sikrit
+data:
+  DB_USER: {{ .Values.data.DB_USER }}
+  DB_PASS: {{ .Values.data.DB_PASS }}
